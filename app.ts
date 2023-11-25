@@ -189,26 +189,46 @@ console.log(`Distance: ${distance.toFixed(2)} KM`);
 // // person1.nic = '586958658';  ----> nic is read only cannot change
 // console.log(person1);
 
-// -------------------------------------------
+// ------------------------------------------- Private key word --------------------------
 
-class person{
-    public name: string;
-    public age: number;
-    private nic: string; // private key word
+// class person{
+//     public name: string;
+//     public age: number;
+//     private nic: string; // private key word
+//
+//     constructor(name: string , age: number , nic: string) {
+//         this.name = name;
+//         this.age = age;
+//         this.nic = nic;
+//     }
+//
+//     getNic(){
+//         return this.nic;
+//     }
+// }
+//
+// let person1 = new person('kasun' , 25 , '1256355554');
+// console.log(person1);
+// person1.name = "Janith";
+// console.log(person1.name)
+// console.log(person1.getNic())
 
-    constructor(name: string , age: number , nic: string) {
-        this.name = name;
-        this.age = age;
-        this.nic = nic;
+//-----------------------
+
+class DBConnection{
+    static connection: string;
+
+    private constructor(value:string) {
+        DBConnection.connection = value;
     }
 
-    getNic(){
-        return this.nic;
+    static getConnection(){
+        if (!DBConnection.connection){
+            new DBConnection('test-connection')
+        }
+        return DBConnection.connection;
     }
 }
 
-let person1 = new person('kasun' , 25 , '1256355554');
-console.log(person1);
-person1.name = "Janith";
-console.log(person1.name)
-console.log(person1.getNic())
+let connection: string = DBConnection.getConnection();
+console.log("Connection : " + connection)
