@@ -68,14 +68,14 @@ console.log("Type Script")
 
 //------------------------------------------------
 
-let student : {
-    id: number;
-    name: string;
-    age: number;
-    college: string;
-};
-
-student = {id: 1, name:'kasun', age:28 , college: "UOC"};
+// let student : {
+//     id: number;
+//     name: string;
+//     age: number;
+//     college: string;
+// };
+//
+// student = {id: 1, name:'kasun', age:28 , college: "UOC"};
 
 //------------------------Distance Calculate--------------------------
 
@@ -114,5 +114,18 @@ let distance = calcDistance(location_1, location_2);
 console.log(`Distance: ${distance.toFixed(2)} KM`);
 
 
-//-------------------------------calculator
+//---------------------------------- Array ---------------------------------
 
+let  num_array: number[] = [10,20,30];
+let  string_array: string[] = ['hello' , 'abc' , 'cde'];
+let string_number_array: (string|number)[] = [1,2,'l','hello',7];
+
+let student1 = {id: 1 , name: 'kasun' , age: 25 , faculty: 'CSE'};
+let student2 = {id: 2 , name: 'dasun' , age: 26 , faculty: 'TONIC'};
+let student3 = {id: 3 , name: 'kamal' , age: 24 , faculty: 'TONIC' , uni: 'UOC'}; // uni is a optional value
+
+let students: {id: number , name: string , age: number , faculty: string , uni?: string}[] = []; // optional nisa ? danawa
+
+students.push(student1);
+students.push(student2);
+students.push(student3);
