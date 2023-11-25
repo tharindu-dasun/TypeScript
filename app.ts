@@ -171,21 +171,44 @@ console.log(`Distance: ${distance.toFixed(2)} KM`);
 
 //--------------------------------------------------Classes--------------------------
 
+// class person{
+//     name: string;
+//     age: number;
+//     readonly nic: string; // readonly keyword eka use kalama change k ba
+//
+//     constructor(name: string , age: number , nic: string) {
+//         this.name = name;
+//         this.age = age;
+//         this.nic = nic;
+//     }
+// }
+//
+// let person1 = new person('kasun' , 25 , '1256355554');
+// console.log(person1);
+// person1.name = "Janith";
+// // person1.nic = '586958658';  ----> nic is read only cannot change
+// console.log(person1);
+
+// -------------------------------------------
+
 class person{
-    name: string;
-    age: number;
-    readonly nic: string; // change k ba
+    public name: string;
+    public age: number;
+    private nic: string; // private key word
 
     constructor(name: string , age: number , nic: string) {
         this.name = name;
         this.age = age;
         this.nic = nic;
     }
+
+    getNic(){
+        return this.nic;
+    }
 }
 
 let person1 = new person('kasun' , 25 , '1256355554');
 console.log(person1);
 person1.name = "Janith";
-// person1.nic = '586958658';  ----> nic is read only cannot change
-console.log(person1);
-
+console.log(person1.name)
+console.log(person1.getNic())
