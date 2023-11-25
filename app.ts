@@ -213,22 +213,28 @@ console.log(`Distance: ${distance.toFixed(2)} KM`);
 // console.log(person1.name)
 // console.log(person1.getNic())
 
-//-----------------------
+//----------------------------------------- Singleton ------------------------------------
 
-class DBConnection{
-    static connection: string;
+// class DBConnection{
+//     static connection: string;
+//
+//     private constructor(value:string) {
+//         DBConnection.connection = value;
+//     }
+//
+//     static getConnection(){
+//         if (!DBConnection.connection){
+//             new DBConnection('test-connection')
+//         }
+//         return DBConnection.connection;
+//     }
+// }
+//
+// let connection: string = DBConnection.getConnection();
+// console.log("Connection : " + connection)
 
-    private constructor(value:string) {
-        DBConnection.connection = value;
-    }
+//------------------------------------------------Tuple-----------------------------
 
-    static getConnection(){
-        if (!DBConnection.connection){
-            new DBConnection('test-connection')
-        }
-        return DBConnection.connection;
-    }
-}
+// tuple = piliwelakata hadapu change nowena collection ekak
 
-let connection: string = DBConnection.getConnection();
-console.log("Connection : " + connection)
+let data: [string , number , string , boolean , number] = ['hello' , 12 , 'BAAAA' , true , 52];
