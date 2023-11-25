@@ -31,37 +31,88 @@ console.log("Type Script")
 // let result2 =  sendSum(10 , 20 , "Tharindu" , false);
 // console.log(result2);
 
-//---------------------------------------
+//---------------------------------------Type Guard--------------------------------------
 
-function sum(num1:number, num2:number): number{  // reture type eka number kiyala denawa
-    return num1 + num2;
+// function sum(num1:number, num2:number): number{  // reture type eka number kiyala denawa
+//     return num1 + num2;
+// }
+//
+// function sumString(num1:number, num2:number): string{  // reture type eka number kiyala denawa
+//     return `sum is : ${num1 + num2}`;
+// }
+//
+// function findSum(num1:number | string , num2:number | string):number {
+//     if (typeof num1=="string" || typeof num2=="string"){   //type guard
+//         return +num1 + +num2;
+//     }else{
+//         return num1 + num2;
+//     }
+// }
+//
+// let results4 = findSum('10000000 ', 20);
+// console.log("Result is : " + results4);
+//
+// let results = sum(10, 20);
+// console.log(`result : `, results);
+//
+// function findSum2(num1:number, num2:number): number | string {
+//     if (typeof num1=="string" || typeof num2=="string"){
+//         return +num1 + +num2;
+//     }else{
+//         return num1 + num2;
+//     }
+// }
+//
+// let result5 = findSum2(10 , 12 );
+// console.log("Result is : " + result5);
+
+//------------------------------------------------
+
+let student : {
+    id: number;
+    name: string;
+    age: number;
+    college: string;
+};
+
+student = {id: 1, name:'kasun', age:28 , college: "UOC"};
+
+//------------------------Distance Calculate--------------------------
+
+function calcDistance(location1: {lon: number; lat: number}, location2: {lon: number; lat: number}) {
+
+    let lon1 = location1.lon;
+    let lat1 = location1.lat;
+
+    let lon2 = location2.lon;
+    let lat2 = location2.lat;
+
+
+    // ---- calc distance  ----
+    const dLat = lat2 - lat1;
+    const dLon = lon2 - lon1;
+    const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    // Radius of the Earth in kilometers (mean value)
+    const R = 6371;
+
+    // Calculate the distance
+    let distance = R * c;
+// ---- calc distance  ----
+
+    return distance;
+
 }
 
-function sumString(num1:number, num2:number): string{  // reture type eka number kiyala denawa
-    return `sum is : ${num1 + num2}`;
-}
+let location_1 = { lon: 80.7718, lat: 7.8731 }; // sri lanka
+let location_2 = { lon: 133.7751, lat: 25.2744 }; // ausi
 
-function findSum(num1:number | string , num2:number | string):number {
-    if (typeof num1=="string" || typeof num2=="string"){   //type guard
-        return +num1 + +num2;
-    }else{
-        return num1 + num2;
-    }
-}
+let distance = calcDistance(location_1, location_2);
+console.log(`Distance: ${distance.toFixed(2)} KM`);
 
-let results4 = findSum('10000000 ', 20);
-console.log("Result is : " + results4);
 
-let results = sum(10, 20);
-console.log(`result : `, results);
+//-------------------------------calculator
 
-function findSum2(num1:number, num2:number): number | string {
-    if (typeof num1=="string" || typeof num2=="string"){
-        return +num1 + +num2;
-    }else{
-        return num1 + num2;
-    }
-}
-
-let result5 = findSum2(10 , 12 );
-console.log("Result is : " + result5);
