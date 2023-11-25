@@ -37,5 +37,31 @@ function sum(num1:number, num2:number): number{  // reture type eka number kiyal
     return num1 + num2;
 }
 
+function sumString(num1:number, num2:number): string{  // reture type eka number kiyala denawa
+    return `sum is : ${num1 + num2}`;
+}
+
+function findSum(num1:number | string , num2:number | string):number {
+    if (typeof num1=="string" || typeof num2=="string"){   //type guard
+        return +num1 + +num2;
+    }else{
+        return num1 + num2;
+    }
+}
+
+let results4 = findSum('10000000 ', 20);
+console.log("Result is : " + results4);
+
 let results = sum(10, 20);
 console.log(`result : `, results);
+
+function findSum2(num1:number, num2:number): number | string {
+    if (typeof num1=="string" || typeof num2=="string"){
+        return +num1 + +num2;
+    }else{
+        return num1 + num2;
+    }
+}
+
+let result5 = findSum2(10 , 12 );
+console.log("Result is : " + result5);
