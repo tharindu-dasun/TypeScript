@@ -152,19 +152,40 @@ console.log(`Distance: ${distance.toFixed(2)} KM`);
 
 //------------------------------------------ interface ---------------------------
 
-let  num_array: number[] = [10,20,30];
-let  string_array: string[] = ['hello' , 'abc' , 'cde'];
-let string_number_array: (string|number)[] = [1,2,'l','hello',7];
+// let  num_array: number[] = [10,20,30];
+// let  string_array: string[] = ['hello' , 'abc' , 'cde'];
+// let string_number_array: (string|number)[] = [1,2,'l','hello',7];
+//
+// type Graduate = {id: number , name: string , age: number , faculty: string , uni?: string};
+//
+// interface Graduate2 {
+//     id: number;
+//     name: string;
+//     age: number;
+//     faculty: string;
+//     uni?: string;
+// }
+//
+// let students: Graduate[] = [];
+// let teachers: Graduate2[] = [];
 
-type Graduate = {id: number , name: string , age: number , faculty: string , uni?: string};
+//--------------------------------------------------Classes--------------------------
 
-interface Graduate2 {
-    id: number;
+class person{
     name: string;
     age: number;
-    faculty: string;
-    uni?: string;
+    readonly nic: string; // change k ba
+
+    constructor(name: string , age: number , nic: string) {
+        this.name = name;
+        this.age = age;
+        this.nic = nic;
+    }
 }
 
-let students: Graduate[] = [];
-let teachers: Graduate2[] = [];
+let person1 = new person('kasun' , 25 , '1256355554');
+console.log(person1);
+person1.name = "Janith";
+// person1.nic = '586958658';  ----> nic is read only cannot change
+console.log(person1);
+
