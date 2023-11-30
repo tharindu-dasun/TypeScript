@@ -1,4 +1,4 @@
-console.log("Type Script")
+// console.log("Type Script")
 //
 // function sum(num1: number , num2: number){
 //     return num1 + num2;
@@ -79,39 +79,39 @@ console.log("Type Script")
 
 //------------------------Distance Calculate--------------------------
 
-function calcDistance(location1: {lon: number; lat: number}, location2: {lon: number; lat: number}) {
-
-    let lon1 = location1.lon;
-    let lat1 = location1.lat;
-
-    let lon2 = location2.lon;
-    let lat2 = location2.lat;
-
-
-    // ---- calc distance  ----
-    const dLat = lat2 - lat1;
-    const dLon = lon2 - lon1;
-    const a =
-        Math.sin(dLat / 2) ** 2 +
-        Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-    // Radius of the Earth in kilometers (mean value)
-    const R = 6371;
-
-    // Calculate the distance
-    let distance = R * c;
-// ---- calc distance  ----
-
-    return distance;
-
-}
-
-let location_1 = { lon: 80.7718, lat: 7.8731 }; // sri lanka
-let location_2 = { lon: 133.7751, lat: 25.2744 }; // ausi
-
-let distance = calcDistance(location_1, location_2);
-console.log(`Distance: ${distance.toFixed(2)} KM`);
+// function calcDistance(location1: {lon: number; lat: number}, location2: {lon: number; lat: number}) {
+//
+//     let lon1 = location1.lon;
+//     let lat1 = location1.lat;
+//
+//     let lon2 = location2.lon;
+//     let lat2 = location2.lat;
+//
+//
+//     // ---- calc distance  ----
+//     const dLat = lat2 - lat1;
+//     const dLon = lon2 - lon1;
+//     const a =
+//         Math.sin(dLat / 2) ** 2 +
+//         Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+//     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+//
+//     // Radius of the Earth in kilometers (mean value)
+//     const R = 6371;
+//
+//     // Calculate the distance
+//     let distance = R * c;
+// // ---- calc distance  ----
+//
+//     return distance;
+//
+// }
+//
+// let location_1 = { lon: 80.7718, lat: 7.8731 }; // sri lanka
+// let location_2 = { lon: 133.7751, lat: 25.2744 }; // ausi
+//
+// let distance = calcDistance(location_1, location_2);
+// console.log(`Distance: ${distance.toFixed(2)} KM`);
 
 
 //---------------------------------- Array ---------------------------------
@@ -237,4 +237,20 @@ console.log(`Distance: ${distance.toFixed(2)} KM`);
 
 // tuple = piliwelakata hadapu change nowena collection ekak
 
-let data: [string , number , string , boolean , number] = ['hello' , 12 , 'BAAAA' , true , 52];
+// let data: [string , number , string , boolean , number] = ['hello' , 12 , 'BAAAA' , true , 52];
+
+//-------------------------------------- Fixed Deposit ----------------------------
+
+let owner_name_input_elemet = document.getElementById('ownerName') as HTMLInputElement;
+let fixed_amount_input_elemet = document.getElementById('fixedAmount') as HTMLInputElement;
+let add_fix_btn_elemet = document.getElementById('addFixBtn');
+
+add_fix_btn_elemet:addEventListener('click',() =>{
+    let owner_name = owner_name_input_elemet.value;
+    let fixed_amount = fixed_amount_input_elemet.value;
+
+    console.log('Owner Name' + owner_name);
+    console.log('fixed Amount' + fixed_amount);
+
+});
+
