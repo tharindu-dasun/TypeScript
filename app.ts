@@ -243,7 +243,7 @@
 
 let owner_name_input_elemet = document.getElementById('ownerName') as HTMLInputElement;
 let fixed_amount_input_elemet = document.getElementById('fixedAmount') as HTMLInputElement;
-let add_fix_btn_elemet = document.getElementById('addFixBtn');
+let add_fix_btn_elemet = document.getElementById('addFixBtn') as ;
 
 add_fix_btn_elemet:addEventListener('click',() =>{
     let owner_name = owner_name_input_elemet.value;
