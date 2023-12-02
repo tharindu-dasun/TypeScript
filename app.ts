@@ -309,3 +309,29 @@ update_interest_rate_btn_element.addEventListener('click', () =>{
     updateTable();
 });
 
+//------------------------------------------------- Union ----------------------------------
+
+let array:(String | number | boolean)[] = ["Hello" , 25 , true];
+
+class Student{
+    id: number;
+    name: String;
+    college: String;
+    faculty: String;
+}
+
+class Teacher{
+    id: number;
+    name: String;
+    college: String;
+    faculty: String;
+}
+
+class Soldier{
+    id: number;
+    name: String;
+    college: String;
+    faculty: String;
+}
+
+
