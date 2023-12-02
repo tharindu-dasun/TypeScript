@@ -336,31 +336,69 @@
 
 //---------------------------------------------- Roles ------------------------------------------
 
-enum Roles{
-    SUPER_ADMIN,
-    ADMIN,
-    MANAGER,
-    SELLER,
-    BUYER
-}
+// enum Roles{
+//     SUPER_ADMIN,
+//     ADMIN,
+//     MANAGER,
+//     SELLER,
+//     BUYER
+// }
+//
+// let myRole: Roles = Roles.ADMIN;
+//
+// function sendMessage(role: Roles) {
+//     switch (role){
+//         case Roles.ADMIN:
+//             console.log("Hello Admin !");
+//             break;
+//         case Roles.SUPER_ADMIN:
+//             console.log("Hello Super Admin !");
+//             break;
+//         case Roles.MANAGER:
+//             console.log("Hello Manager !");
+//             break;
+//         case Roles.SELLER:
+//             console.log("Hello Seller !");
+//             break;
+//         case Roles.BUYER:
+//             console.log("Hello Buyer !")
+//     }
+// }
 
-let myRole: Roles = Roles.ADMIN;
+//------------------------------------------- Heritage ------------------------------
 
-function sendMessage(role: Roles) {
-    switch (role){
-        case Roles.ADMIN:
-            console.log("Hello Admin !");
-            break;
-        case Roles.SUPER_ADMIN:
-            console.log("Hello Super Admin !");
-            break;
-        case Roles.MANAGER:
-            console.log("Hello Manager !");
-            break;
-        case Roles.SELLER:
-            console.log("Hello Seller !");
-            break;
-        case Roles.BUYER:
-            console.log("Hello Buyer !")
+class Person{
+    name: string;
+    protected _nic: string;
+    age: number;
+
+
+    constructor(name: string, nic: string, age: number) {
+        this.name = name;
+        this._nic = nic;
+        this.age = age;
+    }
+
+    getNic(): string {
+        return this._nic;
     }
 }
+
+class Teacher extends Person{
+    subject: string;
+    college: string;
+
+
+    constructor(name: string, nic: string, age: number, subject: string, college: string) {
+        super(name , nic , age);
+        this.subject = subject;
+        this.college = college;
+    }
+    getNic(): string {
+        return this._nic;
+    }
+}
+
+let teacher = new Teacher("Kasun" , "1256348" , 25 , "CS" , "IJSE") ;
+
+console.log(teacher.getNic());
