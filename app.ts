@@ -367,38 +367,66 @@
 
 //------------------------------------------- Heritage ------------------------------
 
-class Person{
-    name: string;
-    protected _nic: string;
-    age: number;
+// class Person{
+//     name: string;
+//     protected _nic: string;
+//     age: number;
+//
+//
+//     constructor(name: string, nic: string, age: number) {
+//         this.name = name;
+//         this._nic = nic;
+//         this.age = age;
+//     }
+//
+//     getNic(): string {
+//         return this._nic;
+//     }
+// }
+//
+// class Teacher extends Person{
+//     subject: string;
+//     college: string;
+//
+//
+//     constructor(name: string, nic: string, age: number, subject: string, college: string) {
+//         super(name , nic , age);
+//         this.subject = subject;
+//         this.college = college;
+//     }
+//     getNic(): string {
+//         return this._nic;
+//     }
+// }
+//
+// let teacher = new Teacher("Kasun" , "1256348" , 25 , "CS" , "IJSE") ;
+//
+// console.log(teacher.getNic());
 
+//----------------------------------------------------- Abstract ---------------------------
 
-    constructor(name: string, nic: string, age: number) {
-        this.name = name;
-        this._nic = nic;
-        this.age = age;
-    }
-
-    getNic(): string {
-        return this._nic;
+abstract class Animal{
+    abstract move(): void;
+    eat(): void{
+        console.log("Eat via mouth")
     }
 }
 
-class Teacher extends Person{
-    subject: string;
-    college: string;
-
-
-    constructor(name: string, nic: string, age: number, subject: string, college: string) {
-        super(name , nic , age);
-        this.subject = subject;
-        this.college = college;
-    }
-    getNic(): string {
-        return this._nic;
+class Cat extends Animal{
+    move(): void {
+        console.log("Using Legs")
     }
 }
 
-let teacher = new Teacher("Kasun" , "1256348" , 25 , "CS" , "IJSE") ;
+class Bird extends Animal{
+    move(): void {
+        console.log("Using feathers")
+    }
+}
 
-console.log(teacher.getNic());
+let animel1: Animal = new Cat();
+animel1.eat();
+animel1.move();
+let animel2: Animal = new Bird();
+animel2.eat();
+animel2.move();
