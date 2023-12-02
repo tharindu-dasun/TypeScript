@@ -405,28 +405,61 @@
 
 //----------------------------------------------------- Abstract ---------------------------
 
-abstract class Animal{
-    abstract move(): void;
-    eat(): void{
-        console.log("Eat via mouth")
+// abstract class Animal{
+//     abstract move(): void;
+//     eat(): void{
+//         console.log("Eat via mouth")
+//     }
+// }
+//
+// class Cat extends Animal{
+//     move(): void {
+//         console.log("Using Legs")
+//     }
+// }
+//
+// class Bird extends Animal{
+//     move(): void {
+//         console.log("Using feathers")
+//     }
+// }
+//
+// let animel1: Animal = new Cat();
+// animel1.eat();
+// animel1.move();
+// let animel2: Animal = new Bird();
+// animel2.eat();
+// animel2.move();
+
+//------------------------------------------- Generics --------------------------------------
+
+class Student{
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
     }
 }
 
-class Cat extends Animal{
-    move(): void {
-        console.log("Using Legs")
-    }
+let array1: number[] = [1, 2, 3 , 4 , 5];
+let array2: string[] = ["Hello" , "IJSE" , "GDSE"];
+let array3: Student[] = [new Student("Kasun" , 25),
+                            new Student("Pasun" , 22),
+                            new Student("Dasun" , 24)];
+let array4: boolean[] = [true, false, true, true, false];
+
+function removeLastItem<T>(array: T[]): T[] {
+    return array.slice(0, array.length -1);
 }
 
-class Bird extends Animal{
-    move(): void {
-        console.log("Using feathers")
-    }
-}
+let result1 = removeLastItem<number>(array1);
+console.log(result1);
+let result2 = removeLastItem<string>(array2);
+console.log(result2);
+let result3 = removeLastItem<Student>(array3);
+console.log(result3);
+let result4 = removeLastItem<boolean>(array4);
+console.log(result4);
 
-let animel1: Animal = new Cat();
-animel1.eat();
-animel1.move();
-let animel2: Animal = new Bird();
-animel2.eat();
-animel2.move();
