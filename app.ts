@@ -463,3 +463,16 @@ console.log(result3);
 let result4 = removeLastItem<boolean>(array4);
 console.log(result4);
 
+class SmartArray<T>{
+    private array: T[];
+
+    constructor(array: T[]) {
+        this.array = array;
+    }
+}
+
+new SmartArray<number>(array1);
+new SmartArray<string>(array2);
+new SmartArray<Student>(array3);
+new SmartArray<boolean>(array4);
+
