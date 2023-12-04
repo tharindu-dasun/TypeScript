@@ -473,6 +473,7 @@ class SmartArray<T>{
 
 new SmartArray<number>(array1);
 new SmartArray<string>(array2);
+// new SmartArray<string>(array2);
 new SmartArray<Student>(array3);
 new SmartArray<boolean>(array4);
 
